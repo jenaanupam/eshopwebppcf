@@ -3,10 +3,36 @@
 @{
     ViewData["Title"] = "Basket";
 }
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    .mySlides {
+        display: none
+    }
+
+    .w3-left, .w3-right, .w3-badge {
+        cursor: pointer
+    }
+
+    .w3-badge {
+        height: 13px;
+        width: 13px;
+        padding: 0
+    }
+</style>
 <section class="esh-catalog-hero">
-    <div class="container">
-        <img class="esh-catalog-title" src="../images/main_banner_text.png" />
+    <div class="w3-content w3-display-container" style="max-width:100%">
+        <img class="mySlides" src="~/images/HeadNavigation/819162.jpg" style="width:100%">
+        <img class="mySlides" src="~/images/HeadNavigation/ef56fe.jpg" style="width:100%">
+        <img class="mySlides" src="~/images/HeadNavigation/17cfb4.jpg" style="width:100%">
+        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+        </div>
     </div>
+
 </section>
 
 <div class="container">
@@ -23,7 +49,7 @@
                 <section class="esh-basket-title col-xs-2">Cost</section>
             </article>
             <div class="esh-catalog-items row">
-                @for (int i=0; i< Model.BasketModel.Items.Count; i++)
+                @for (int i = 0; i < Model.BasketModel.Items.Count; i++)
                 {
                     var item = Model.BasketModel.Items[i];
                     <article class="esh-basket-items row">
@@ -68,7 +94,9 @@
                 }
                 <section class="esh-basket-item col-xs-push-8 col-xs-4">
                     <button class="btn esh-basket-checkout" name="updatebutton" value="" type="submit"
-                            asp-page-handler="Update">[ Update ]</button>
+                            asp-page-handler="Update">
+                        [ Update ]
+                    </button>
                     <input type="submit" asp-page="Checkout"
                            class="btn esh-basket-checkout"
                            value="[ Checkout ]" name="action" />

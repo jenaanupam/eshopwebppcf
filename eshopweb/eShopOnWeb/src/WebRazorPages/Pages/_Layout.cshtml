@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="~/css/catalog/catalog.component.css" />
     <link rel="stylesheet" href="~/css/basket/basket-status/basket-status.component.css" />
     <link rel="stylesheet" href="~/css/orders/orders.component.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="navbar navbar-light navbar-static-top">
@@ -72,5 +74,66 @@
     </environment>
 
     @RenderSection("scripts", required: false)
+
+    <script>
+
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");  
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+              //  $(x[i]).fadeOut(500);
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+
+            if (myIndex == 0) {
+                myIndex++;
+                $(x[myIndex - 1]).fadeIn(100);
+            }
+            else { 
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+           // x[myIndex - 1].style.display = "block";
+            $(x[myIndex - 1]).fadeIn(1000);
+            dots[myIndex - 1].className += " w3-white";
+            }
+            setTimeout(carousel, 3000); // Change image every 3 seconds
+        }
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            //x[slideIndex - 1].style.display = "block";
+            $(x[myIndex - 1]).fadeIn(1000);
+            dots[slideIndex - 1].className += " w3-white";
+            myIndex = slideIndex;
+        }
+    </script>
 </body>
 </html>
