@@ -1,16 +1,24 @@
 ﻿@model PaginationInfoViewModel
-
+    <style>
+        .fontcolorback {
+            color: #FFFFFF;
+            font-size:1rem;
+            height:3rem;
+        }
+    </style>
 <div class="esh-pager">
 	<div class="container-fluid">
 		<article class="esh-pager-wrapper row">
 			<nav>
 				<div class="col-md-2 col-xs-12">
-					<a class="esh-pager-item-left esh-pager-item--navigable @Model.Previous"
-					   id="Previous"
-					   asp-route-pageid="@(Model.ActualPage - 1)"
-					   aria-label="Previous">
-						Previous
-					</a>
+                    <h4>
+                        <a class="esh-pager-item-left esh-pager-item--navigable @Model.Previous"
+                           id="Previous"
+                           asp-route-pageid="@(Model.ActualPage - 1)"
+                           aria-label="Previous">
+                            Previous
+                        </a>
+                    </h4>
 				</div>
 				
 				<div class="col-md-8 col-xs-12">
@@ -19,14 +27,16 @@
 					</span>
 				</div>
 		        
-				<div class="col-md-2 col-xs-12">
-					<a class="esh-pager-item-right esh-pager-item--navigable @Model.Next"
-					   id="Next"
-					   asp-route-pageid="@(Model.ActualPage + 1)"
-					   aria-label="Next">
-						Next
-					</a>
-				</div>
+                <div class="col-md-2 col-xs-12">
+                    <h4>
+                        <a class="esh-pager-item-right esh-pager-item--navigable @Model.Next"
+                           id="Next"
+                           asp-route-pageid="@(Model.ActualPage + 1)"
+                           aria-label="Next">
+                            Next
+                        </a>
+                        </h4>
+                </div>
 			</nav>
 		</article>
 	</div>

@@ -23,19 +23,28 @@
     <link rel="stylesheet" href="~/css/orders/orders.component.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <style>
+        .backgroundappcolor {
+            background-color: #2874f0;
+        }
+        .logofloat {
+           float:left;
+        }
+    </style>
 </head>
 <body>
-    <header class="navbar navbar-light navbar-static-top">
+    <header class="navbar navbar-light navbar-static-top backgroundappcolor">
         <div class="container">
-            <article class="row">
+            @*<article class="row">*@
 
-                <section class="col-lg-7 col-md-6 col-xs-12">
+                @*<section class="col-lg-7 col-md-6 col-xs-12">*@
                     <a asp-page="/Index" class="navbar-brand">
                         <img src="../images/brand.png" alt="eShop On Web" />
                     </a>
-                </section>
-                @await Html.PartialAsync("_LoginPartial")
-            </article>
+                    @await Html.PartialAsync("_LoginPartial")
+                @*</section>*@
+               
+            @*</article>*@
         </div>
     </header>
 
