@@ -1,6 +1,6 @@
 ﻿---
 applications:
-- name: demo_dotNetCoreShopingNew
+- name: demo_dotNetCoreeshopweb
   memory: 2048M
   buildpack : dotnet_core_buildpack
   env:
